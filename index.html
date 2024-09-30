@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Sensação Térmica</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Calculadora de Sensação Térmica</h1>
+
+      <label for="temperatura">Temperatura do Ar (°C):</label>
+      <input type="number" id="temperatura" placeholder="Digite a temperatura" />
+
+      <label for="vento">Velocidade do Vento (km/h):</label>
+      <input type="number" id="vento" placeholder="Digite a velocidade do vento" />
+
+      <button onclick="calcular()">Calcular Sensação Térmica</button>
+
+      <div class="result" id="resultado"></div>
+
+      <div class="explicacao">
+        <h2>Como é calculada a sensação térmica?</h2>
+        <p>
+          A sensação térmica, também conhecida como "wind chill", é calculada utilizando a seguinte
+          fórmula:
+        </p>
+        <p><strong>Fórmula:</strong></p>
+        <pre>
+T<sub>wc</sub> = 13.12 + 0.6215T<sub>a</sub> - 11.37v<sup>0.16</sup> + 0.3965T<sub>a</sub>v<sup>0.16</sup>
+            </pre
+        >
+        <p>Onde:</p>
+        <ul>
+          <li>
+            <strong>T<sub>wc</sub></strong
+            >: Sensação térmica (em °C)
+          </li>
+          <li>
+            <strong>T<sub>a</sub></strong
+            >: Temperatura do ar (em °C)
+          </li>
+          <li><strong>v</strong>: Velocidade do vento (em km/h)</li>
+        </ul>
+        <p>
+          Essa fórmula é usada para determinar como a temperatura "sente" quando o vento está
+          presente, especialmente em condições de frio. O cálculo só é relevante para temperaturas
+          abaixo de 10°C e velocidades de vento superiores a 4,8 km/h.
+        </p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
